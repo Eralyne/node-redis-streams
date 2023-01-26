@@ -69,5 +69,5 @@ export interface StreamRecord {
   /**
    * Data of a record
    */ 
-  data: string | any | undefined
+  data: string
 }
