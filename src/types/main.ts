@@ -51,7 +51,7 @@ export interface ConsumerOptions {
   /**
    * Function called on the record that threw an error, after all previously processes messages are acknowledged
    */
-  errorHandler?: (streamRecord: StreamRecord) => Promise<void>
+  errorHandler?: (streamRecord: StreamRecord, error: Error) => Promise<void>
 }
 
 /**
@@ -66,4 +66,8 @@ export interface StreamRecord {
    * Whether the record was reclaimed, will only exist if true
    */
   reclaimed: boolean
+  /**
+   * Data of a record
+   */ 
+  data: string | any | undefined
 }
